@@ -1,0 +1,32 @@
+name: Build with pnpm
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 21
+      
+    - name: Install pnpm
+      run: npm install -g pnpm
+      
+    - name: Install dependencies
+      run: pnpm install
+      
+    - name: Build
+      run: pnpm run build
