@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='dark'>
+    <html lang="en" className='dark min-h-[100vh]'>
       <body className={inter.className}>
         {children}
         <Toaster/>

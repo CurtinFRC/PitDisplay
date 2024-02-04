@@ -65,7 +65,73 @@
     --ring: 212.7 26.8% 83.9%;
   }
 }
- 
+
+@layer base {
+  html {
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  .cardGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px; /* Adjust as needed */
+  }
+
+  .mainGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .overallGrid {
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: hidden;
+  }
+
+  .nav {
+    overflow-y: hidden;
+    min-width: 100%;
+  }
+
+  .nav-spacing {
+    /* make gap relative to screen size so that the items slowly come together as the screen gets smaller */
+    gap: 10%;  
+  }
+
+  .match {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .match-info {
+    padding: 6px;
+  }
+
+  .red {
+    background-color: #ff0000; /* Red color */
+    color: #ffffff; /* White text */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional box shadow */
+  }
+
+  .blue {
+    background-color: #0000ff; /* Blue color */
+    color: #ffffff; /* White text */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional box shadow */
+  }
+  
+  .rankingsGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+
+    overflow-y: hidden;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -74,3 +140,4 @@
     @apply bg-background text-foreground;
   }
 }
+
