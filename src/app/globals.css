@@ -78,6 +78,20 @@
     gap: 16px; /* Adjust as needed */
   }
 
+  .settingsGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
+
+  .rightGrid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+    max-height: 76vh;
+  }
+
   .mainGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -130,6 +144,77 @@
 
     overflow-y: hidden;
   }
+
+  .taskGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+
+    min-height: 10vh;
+    max-height: 10vh;
+
+    overflow-y: scroll;
+  }
+
+  .tasks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  
+    grid-template-rows: repeat(1, 1fr);
+    gap: 10px;
+    overflow-y: auto;
+  }
+
+  .strategy {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+  }
+
+  .strats-grid {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+  }
+
+  .strats-grid-second {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .entry {
+    min-height: 100%;
+    min-width: 100%;
+  }
+
+  .sidebar {
+    width: 200px;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+  }
+
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+ /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+      overflow: scroll;
+}
 }
 
 @layer base {

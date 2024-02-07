@@ -19,6 +19,11 @@ export async function AllianceRequest(url: string) {
   });  
 }
 
+export async function GetTeamData(team: number, event: string) {
+  if (event == "" || event == undefined || event == null) { return null; }
+
+  return AllianceRequest("/team/frc" + team.toString() + "/event/" + event + "/status");
+}
 export async function GetMatches(event: string) {
 
   if (event == "" || event == undefined || event == null) { return []; }
