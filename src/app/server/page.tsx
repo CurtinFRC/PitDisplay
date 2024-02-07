@@ -95,16 +95,16 @@ export default function TaskInput() {
           placeholder="Task Name"
           value={taskName}
           onChange={(e) => setTaskName(e.target.value)}
-          mb={2}
+          //mb={2}
         />
         <Textarea
           placeholder="Task Description"
           value={taskDescription}
           onChange={(e) => setTaskDescription(e.target.value)}
-          mb={2}
+          //mb={2}
         />
 
-<Button colorScheme="teal" onClick={handleAddTag} mt={4}>
+<Button onClick={handleAddTag}>
         Add Tag
       </Button>
 
@@ -174,13 +174,13 @@ export default function TaskInput() {
               </Command>
             </PopoverContent>
           </Popover>
-            <Button size="sm" colorScheme="red" mt={2} onClick={() => handleRemoveTag(index)}>
+            <Button size="sm" onClick={() => handleRemoveTag(index)}>
               Remove Tag
             </Button>
           </Card>
         ))}
 
-        <Button colorScheme="teal" onClick={handleSubmit}>
+        <Button onClick={handleSubmit}>
           Send
         </Button>
       </Card>

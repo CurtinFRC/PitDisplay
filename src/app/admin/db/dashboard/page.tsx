@@ -170,8 +170,8 @@ export default function DatabaseDashboard() {
           <Label>{task.desc}</Label>
         </Card>
           <div className="button-grid">
-            <Button variant="outline" colorScheme="teal" onClick={() => {RestoreTask(task.id)}}>Restore</Button>
-            <Button variant="destructive" colorScheme="teal" onClick={() => {DeleteTask(task.id)}}>Delete</Button>
+            <Button variant="outline" onClick={() => {RestoreTask(task.id)}}>Restore</Button>
+            <Button variant="destructive" onClick={() => {DeleteTask(task.id)}}>Delete</Button>
           </div>
       </Card>
       ))      
@@ -185,7 +185,7 @@ export default function DatabaseDashboard() {
         <Card className="p-2">
           <Label>{task.desc}</Label>
         </Card>
-          <Button variant="outline" colorScheme="teal" onClick={() => {CompleteTask(task.id)}}>Complete</Button>
+          <Button variant="outline" onClick={() => {CompleteTask(task.id)}}>Complete</Button>
       </Card>
       ))
     },

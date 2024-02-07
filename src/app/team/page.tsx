@@ -88,7 +88,7 @@ export default function Home() {
   const [matches, setMatches] = React.useState([]);
   const [canGetMatches, setCanGetMatches] = React.useState(true);
   
-  const [teamNumber, setTeamNumber] = React.useState(0);
+  const [teamNumber, setTeamNumber] = React.useState('');
 
   const [strategy, setStrategy] = React.useState('');
   const [tasks, setTasks] = React.useState([]);
@@ -149,8 +149,8 @@ export default function Home() {
   }
 
   function GetTeamEventData() {
-    if (teamNumber > 0) {
-       GetTeamData(teamNumber, currentEvent).then((data) => {
+    if (teamNumber != '0') {
+       GetTeamData(Number(teamNumber), currentEvent).then((data) => {
         setTeamData(data);
       })
     
@@ -391,7 +391,7 @@ export default function Home() {
 
         <Card className="p-3 min-h-[100%] max-h-[100%] tasks no-scrollbar">
           
-          {tasks != 'null' || tasks != null || tasks.length != 0 ? tasks.map((task) => (
+          {tasks != null || tasks.length != 0 ? tasks.map((task) => (
             <Card className="p-3 taskGrid task flex flex-col overflow-scroll no-scrollbar mb-[40%] max-h-[105%] min-h-[105%]">
               <Card className="flex flex-row items-center text-left p-2 gap-2"> 
                 {task.tags.map((tag) => (<Badge variant={tag.style}>{tag.text}</Badge>))}
@@ -400,7 +400,7 @@ export default function Home() {
               <Card className="p-2">
                 <Label>{task.desc}</Label>
               </Card>
-                <Button variant="outline" colorScheme="teal" onClick={() => {CompleteTask(task.id)}}>Complete</Button>
+                <Button variant="outline" onClick={() => {CompleteTask(task.id)}}>Complete</Button>
             </Card>
             )) : <Label>Fetching Tasks</Label>}
             
